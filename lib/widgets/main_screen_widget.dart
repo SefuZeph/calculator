@@ -1,6 +1,7 @@
 import 'package:calculator/dimensions.dart';
 import 'package:calculator/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MainScreenWidget extends StatefulWidget {
   MainScreenWidget({Key key}) : super(key: key);
@@ -24,7 +25,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
 
   Color getSwitchScaffoldBlackToWhite() {
     return Color.lerp(
-        kWhite, kLBlack, (_switchButtonPositionY - 19) / (58.0 - 19));
+        kLBlack, kWhite, (_switchButtonPositionY - 19) / (58.0 - 19));
   }
 
   @override
@@ -51,6 +52,20 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                       decoration: BoxDecoration(
                           color: getSwitchBackgroundYellowToBlack(),
                           borderRadius: BorderRadius.circular(20)),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Icon(
+                            FontAwesomeIcons.solidSun,
+                            size: 16,
+                          ),
+                          Icon(
+                            FontAwesomeIcons.solidMoon,
+                            size: 16,
+                            color: kYellow,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Positioned(
